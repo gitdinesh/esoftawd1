@@ -13,31 +13,30 @@ and execute composer update  on command line
 
 ## Change config/app.php
 Add following line under "providers" array 
-"providers" =>[
-	// .....
-	Illuminate\Html\HtmlServiceProvider::class,
+	"providers" =>[
+		// .....
+		Illuminate\Html\HtmlServiceProvider::class,
 
-]
+	]
 
 
 Add following lines under "aliases" array 
 
-"aliases"=>[
 
-	//...
-	'HTML'      => Illuminate\Html\HtmlFacade::class,
-    'Form'      => Illuminate\Html\FormFacade::class
+	"aliases"=>[
+		//...
+		'HTML'      => Illuminate\Html\HtmlFacade::class,
+	    'Form'      => Illuminate\Html\FormFacade::class
 
-]
+	]
 
 
 ## Example  Form element implementation
 
-{!! Form::open(array('url' => 'submit/to')) !!}
+	{!! Form::open(array('url' => 'submit/to')) !!}
+		{!!  Form::label('username', 'USERNAME') !!}
+		{!!  Form::text('username'), Input::old('username')  !!}
 
-	{!!  Form::label('username', 'USERNAME') !!}
-	{!!  Form::text('username'), Input::old('username')  !!}
 
-
-	{!!  Form::submit('Log In')  !!} 
-{!! Form::close() !!}
+		{!!  Form::submit('Log In')  !!} 
+	{!! Form::close() !!}
