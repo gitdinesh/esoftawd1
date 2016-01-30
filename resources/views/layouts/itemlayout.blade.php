@@ -18,7 +18,7 @@
 	<p>@yield('side_nav_bar')</p>
 </section>
 
-<section class="continer" style="background:#F7F7F7">
+<section class="continer" >
 	<p>@yield('content')</p>
 </section>	
 

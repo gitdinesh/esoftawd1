@@ -36,7 +36,7 @@ Route::get('/friend/get/{id}',[
 ]);
 
 
-Route::post('/ymFriend',[
+Route::post('/myFriend',[
 	'as'=>'MyProfile',
 	'uses'=>'FriendController@getIndex'	
 ]);
@@ -48,7 +48,7 @@ Route::post('/ymFriend',[
 Route::get('/items','ItemsController@index');
 
 
+Route::get('/item/add','ItemsController@addItems');
 
-
-
+Route::post('/item/save','ItemsController@store');
 

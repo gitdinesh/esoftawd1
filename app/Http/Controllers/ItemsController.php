@@ -43,9 +43,9 @@ class ItemsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function addItems()
     {
-        //
+         return view('items.additems');
     }
 
     /**
