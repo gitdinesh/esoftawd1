@@ -22,20 +22,31 @@ class ItemsController extends Controller
     {
 
         //Define Array after view
-        $out_put = [
-            'item_title'=>"List All items",
-            'item_list'=>[
-                'Carbon Steel plate',
-                'Carbon fiber plate',
-                'Iorn plate',
-                'Mettle roller',
-                'Brick maker'
-            ],
-            'min_item_count'=>10
-        ];
 
+        $items = [
+            [
+                "image"=>"images/product-img1.jpg",
+                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
+                "price"=>"$839.93"
+            ],
+            [
+                "image"=>"images/product-img2.jpg",
+                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
+                "price"=>"$800.93"
+            ],
+            [
+                "image"=>"images/product-img3.jpg",
+                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
+                "price"=>"$900.93"
+            ],
+            [
+                "image"=>"images/product-img4.jpg",
+                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
+                "price"=>"$1000.93"
+            ],
+        ];
     
-        return view('items.showitemwithlayout')->with($out_put);
+        return view('items.index')->with("items",$items);
     }
 
     /**

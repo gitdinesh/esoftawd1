@@ -11,44 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+Route::get('/', 'ItemsController@index');
 
 
-//Default Routes
-Route::get('/user/login', function () {
-    return view('user.user');
-});
-//Pass parameters through URL
-Route::get('/myfriends/{myUserId}/{is_close_friend}', function ($id,$is_close_friend) {
-    return "My User  Id --> ".$id. " is_close_friend -->".$is_close_friend;
-});
 
 
-//Define Named Routes
-Route::get('/friends','FriendController@getIndex');
-//abc
-//FriendController@showSelectedFriend
-Route::get('/friend/get/{id}',[
-	'as'=>'MyFriend',
-	'uses'=>'FriendController@showSelectedFriend'	
-]);
-
-
-Route::post('/myFriend',[
-	'as'=>'MyProfile',
-	'uses'=>'FriendController@getIndex'	
-]);
-
-
-/**
- * Define Item Related routes in here
- */
-Route::get('/items','ItemsController@index');
-
-
-Route::get('/item/add','ItemsController@addItems');
-
-Route::post('/item/save','ItemsController@store');
 
