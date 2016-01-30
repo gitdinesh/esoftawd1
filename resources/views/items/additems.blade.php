@@ -6,7 +6,7 @@
 
 @section('content')
 
-{{  Form::open(array('action'=>'LogInController@doLogIn', 'method' => 'post')) }}  
+{!! Form::open(array('url' => 'foo/bar')) !!} 
  <table width="439" cellpadding="5" cellspacing="0" summary="shows up when a user wants to log in the system">
   <tbody>
     <tr>
@@ -16,13 +16,13 @@
     </tr>
     <tr>
       <td height="24"><div align="left">
-        <h2>{{  Form::label('username', 'USERNAME') }}</h2>
+        <h2>{!!  Form::label('username', 'USERNAME') !!} </h2>
       </div></td>
-      <td height="24">{{  Form::text('username'), Input::old('username')  }} </td>
+      <td height="24">{!!  Form::text('username'), Input::old('username')  !!}  </td>
     </tr>
     <tr>
-      <td width="86" height="23"><h2> {{  Form::label('password', 'PASSWORD')  }}</h2></td>
-      <td width="327" height="23">{{  Form::password('password')  }} </td>
+      <td width="86" height="23"><h2> {!!  Form::label('password', 'PASSWORD')  !!} </h2></td>
+      <td width="327" height="23">{!!  Form::password('password')  !!}  </td>
     </tr>
     <tr>
       <td height="31" colspan="2"><div align="center">
@@ -30,17 +30,17 @@
           <label>
             <div align="center">
                 <h1>
-                  {{ Form::radio('staffstudent[]', 'staff', false)  }}
-                  {{ Form::label('staff', 'STAFF')  }}
+                  {!! Form::radio('staffstudent[]', 'staff', false)  !!} 
+                  {!! Form::label('staff', 'STAFF')  !!} 
 
-                  {{ Form::radio('staffstudent[]', 'student', false)  }}
-                  {{ Form::label('student', 'STUDENT')  }}
+                  {!! Form::radio('staffstudent[]', 'student', false)  !!} 
+                  {!! Form::label('student', 'STUDENT')  !!} 
                    </h1>
             </div>
           </label>
         </p>
         <div align="center">
-          {{  Form::submit('Log In')  }}
+          {!!  Form::submit('Log In')  !!} 
         </div>
       </div></td>
     </tr>
@@ -51,7 +51,7 @@
     </tr>
   </tbody>
 </table> 
-{{  Form::close()  }}  
-@stop
+{!! Form::close() !!}
 
 
+@endsection
