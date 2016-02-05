@@ -78,7 +78,7 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
-        //
+         return view('items.showitems')->with("items",$id);
     }
 
     /**

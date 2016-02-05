@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'ItemsController@index');
-
+Route::get('/item/show/{id}', 'ItemsController@show');
 
 
 
