@@ -7,6 +7,9 @@ Before Work with Laravel Form Do the folloving changes to the composer.json unde
     "laravel/framework": "5.1.*",
     "illuminate/html": "^5.0"
 }
+## Find Packages 
+https://packagist.org/search/?tags=laravel
+
 
 ## Composer update
 and execute composer update  on command line
@@ -37,6 +40,8 @@ Add following lines under "aliases" array
 	{!! Form::open(array('url' => 'submit/to')) !!}
 		{!!  Form::label('username', 'USERNAME') !!}
 		{!!  Form::text('username'), Input::old('username')  !!}
+
+		{!! Form::select('color_id', $colors, null, ['class' => 'form-control']) !!}
 
 
 		{!!  Form::submit('Log In')  !!} 

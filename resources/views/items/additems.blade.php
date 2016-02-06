@@ -6,7 +6,7 @@
 
 @section('content')
 
-{!! Form::open(array('url' => 'foo/bar')) !!} 
+{!! Form::open(array('url' => 'items/save')) !!} 
  <table width="439" cellpadding="5" cellspacing="0" summary="shows up when a user wants to log in the system">
   <tbody>
     <tr>
