@@ -1,42 +1,23 @@
-## Laravel PHP Framework - Form Builder
+## Laravel PHP Framework - Working With Model
 
-Before Work with Laravel Form Do the folloving changes to the composer.json under "require" object.
+#Defining Models
 
-"require": {
-    "php": ">=5.5.9",
-    "laravel/framework": "5.1.*",
-    "illuminate/html": "^5.0"
-}
+Models typically live in the app directory, but you are free to place them anywhere that can be auto-loaded according to your composer.json file. All Eloquent models extend Illuminate\Database\Eloquent\Model class.
 
-## Composer update
-and execute composer update  on command line
+## Create Model
+	php artisan make:model Item
 
-## Change config/app.php
-Add following line under "providers" array 
-	"providers" =>[
-		// .....
-		Illuminate\Html\HtmlServiceProvider::class,
+If you would like to generate a database migration when you generate the model, you may use the --migration or -m option:
 
-	]
+	php artisan make:model Model\\Item -m
 
+##Table Names
+The "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. 
+You may specify a custom table by defining a table property on your model:
 
-Add following lines under "aliases" array 
+## Primary Keys
+Eloquent will also assume that each table has a primary key column named id. You may define a $primaryKey property to override this convention.
+
+## Inserting & Updating Models
 
 
-	"aliases"=>[
-		//...
-		'HTML'      => Illuminate\Html\HtmlFacade::class,
-	    'Form'      => Illuminate\Html\FormFacade::class
-
-	]
-
-
-## Example  Form element implementation
-
-	{!! Form::open(array('url' => 'submit/to')) !!}
-		{!!  Form::label('username', 'USERNAME') !!}
-		{!!  Form::text('username'), Input::old('username')  !!}
-
-
-		{!!  Form::submit('Log In')  !!} 
-	{!! Form::close() !!}
