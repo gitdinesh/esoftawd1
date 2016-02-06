@@ -13,10 +13,11 @@ and execute composer update  on command line
 
 ## Change config/app.php
 Add following line under "providers" array 
-	"providers" =>[
-		// .....
-		Illuminate\Html\HtmlServiceProvider::class,
+	
 
+	"providers" =>[
+		//..
+		Illuminate\Html\HtmlServiceProvider::class,
 	]
 
 
