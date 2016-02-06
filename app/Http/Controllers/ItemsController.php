@@ -45,7 +45,11 @@ class ItemsController extends Controller
      */
     public function addItems()
     {
-         return view('items.additems');
+        $colors =['b'=>'Black',
+            'w'=>'White',
+            'r'=>'Read'];
+        
+        return view('items.additems')->with('colors',$colors);
     }
 
     /**
@@ -56,7 +60,11 @@ class ItemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        echo $request['_token'].'<br>'; 
+        echo $request->_token;
+        print_r($request->all());
+        
     }
 
     /**

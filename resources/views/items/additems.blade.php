@@ -6,7 +6,7 @@
 
 @section('content')
 
-{!! Form::open(array('url' => 'items/save')) !!} 
+{!! Form::open(array('url' => '/item/save')) !!} 
  <table width="439" cellpadding="5" cellspacing="0" summary="shows up when a user wants to log in the system">
   <tbody>
     <tr>
@@ -32,6 +32,7 @@
                 <h1>
                   {!! Form::radio('staffstudent[]', 'staff', false)  !!} 
                   {!! Form::label('staff', 'STAFF')  !!} 
+                  {!! Form::select('color_id', $colors, null, ['class' => 'form-control']) !!}
 
                   {!! Form::radio('staffstudent[]', 'student', false)  !!} 
                   {!! Form::label('student', 'STUDENT')  !!} 
