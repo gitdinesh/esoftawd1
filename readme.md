@@ -1,23 +1,31 @@
-## Laravel PHP Framework - Working With Model
+## Laravel PHP Framework - Working With Ajax Request
 
-#Defining Models
+#Install NPM
 
-Models typically live in the app directory, but you are free to place them anywhere that can be auto-loaded according to your composer.json file. All Eloquent models extend Illuminate\Database\Eloquent\Model class.
+	sudo curl -sL https://deb.nodesource.com/setup | sudo bash -
+	sudo apt-get install -y nodejs
+	sudo npm -g install npm@latest
 
-## Create Model
-	php artisan make:model Item
+#Install Bower
 
-If you would like to generate a database migration when you generate the model, you may use the --migration or -m option:
+	sudo npm -g install bower
 
-	php artisan make:model Model\\Item -m
 
-##Table Names
-The "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. 
-You may specify a custom table by defining a table property on your model:
+#Locate bower instalation directory
+create .bowerrc file
+Add following line
+Change directory key 
 
-## Primary Keys
-Eloquent will also assume that each table has a primary key column named id. You may define a $primaryKey property to override this convention.
+	{
+  		"directory" : "public/lib"
+	}
 
-## Inserting & Updating Models
 
+#Install Bower Components
+
+	bower init 
+
+or create bower.json file 
+
+	sudo bower install --allow-root
 
