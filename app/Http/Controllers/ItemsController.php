@@ -54,9 +54,10 @@ class ItemsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function addItems()
+    public function addItems(Request $request)
     {
-         return view('items.additems');
+
+        return view('items.additems');
     }
 
     /**
@@ -67,13 +68,16 @@ class ItemsController extends Controller
      */
     public function store(Request $request)
     {
+       
         $item = new Item();
-        $item->title ="Test Item 2";
-        $item->description ="Test Item 2";
-        $item->price ="2000";
-
-
+        $item->title =$request->title;
+        $item->description =$request->description;
+        $item->price =$request->price;
         $item->save();
+        //CHECK CONDITION AND ADD CONTENT BASED ON THE SAVE STATUS
+        
+        $request->session()->flash('alert-success', 'Item add to the system');
+        return redirect('/item/add');
     }
 
     /**
@@ -84,6 +88,8 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
+
+
          return view('items.showitems')->with("items",$id);
     }
 

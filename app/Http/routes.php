@@ -13,4 +13,5 @@
 
 Route::get('/', 'ItemsController@index');
 Route::get('/item/show/{id}', 'ItemsController@show');
-
+Route::get('/item/add','ItemsController@addItems');
+Route::post('/item/save','ItemsController@store');
