@@ -8,7 +8,7 @@
 <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>
 
 
-<script type="text/javascript" src="{{URL::to('js/jquery-1.9.0.min.js')}}"></script> 
+<script type="text/javascript" src="{{URL::to('lib/jquery/jquery.min.js')}}"></script> 
 <script src="{{URL::to('js/jquery.openCarousel.js')}}" type="text/javascript"></script>
 <script type="text/javascript" src="{{URL::to('js/easing.js')}}"></script>
 <script type="text/javascript" src="{{URL::to('js/move-top.js')}}"></script>
@@ -255,7 +255,7 @@
 		});
 	</script>
     <a href="#" id="toTop"> </a>
-    <script type="text/javascript" src="js/navigation.js"></script>
+    <script type="text/javascript" src="{{URL::to('js/sites.js')}}"></script>
 </body>
 </html>
 

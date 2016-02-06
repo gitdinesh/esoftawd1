@@ -5,12 +5,12 @@
 
 @section("content")
   <div class="content">
-  @if(Session::has('alert-success'))
-    <p style="color:green;">
-      {{ Session::get('alert-success') }}
+ 
+    <p style="color:green;" id="alert_message">
+   
     </p>
-  @endif
-  {!! Form::open(array('url' => '/item/save')) !!} 
+
+  {!! Form::open(array('url' => '/item/save','id'=>'frm_add_item')) !!} 
  <table width="439" cellpadding="5" cellspacing="0" summary="shows up when a user wants to log in the system">
   <tbody>
     <tr>
@@ -37,7 +37,7 @@
        
         </p>
         <div align="center">
-          {!!  Form::submit('Log In')  !!} 
+          {!!  Form::submit('Add Item',['id'=>'add_item'])  !!} 
         </div>
       </div></td>
     </tr>

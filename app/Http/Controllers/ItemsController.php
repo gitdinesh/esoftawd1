@@ -73,11 +73,23 @@ class ItemsController extends Controller
         $item->title =$request->title;
         $item->description =$request->description;
         $item->price =$request->price;
-        $item->save();
+        $isSaved = $item->save();
         //CHECK CONDITION AND ADD CONTENT BASED ON THE SAVE STATUS
         
-        $request->session()->flash('alert-success', 'Item add to the system');
-        return redirect('/item/add');
+        $output =[];
+        if($isSaved  ){
+            
+            $output['status']=200;
+            $output['message']="Items has been saved to the system";
+           // echo 
+            return json_encode($output); ;
+        }
+        $output['status']=400;
+        $output['message']="Oops cannot add item to the system";
+        //echo 
+        return json_encode($output); ;
+        //$request->session()->flash('alert-success', 'Item add to the system');
+        //return redirect('/item/add');
     }
 
     /**
