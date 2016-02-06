@@ -51,4 +51,6 @@ Route::get('/items','ItemsController@index');
 Route::get('/item/add','ItemsController@addItems');
 
 Route::get('/item/save','ItemsController@store');
+Route::get('/category/save','ItemsController@addCategory');
+
 

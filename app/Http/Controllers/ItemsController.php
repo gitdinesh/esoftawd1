@@ -9,8 +9,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Model\Item;
-
+use App\Http\Model\Item;
+use App\Http\Model\Category;
 class ItemsController extends Controller
 {
     /**
@@ -57,9 +57,11 @@ class ItemsController extends Controller
     public function store(Request $request)
     {
         $item = new Item();
-        $item->title ="Test Item";
-        $item->description ="Test Item";
-        $item->price ="1000";
+        $item->title ="Test Item 2";
+        $item->description ="Test Item 2";
+        $item->price ="2000";
+
+
         $item->save();
     }
 
@@ -106,5 +108,11 @@ class ItemsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addCategory(){
+        $category = new Category();
+        $category->title ="Electronics";
+        $category->save();
     }
 }
