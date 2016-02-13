@@ -1,6 +1,4 @@
-# Laravel PHP Framework - Retrieving Data from the Database 
-
-##Retrieving Data with  Model functions
+# Laravel PHP Framework - Retrieving Data from the Database  (Model Query)
 
 ##Get All records form table
 The Eloquent all method will return all of the results in the model's table.
