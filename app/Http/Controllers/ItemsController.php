@@ -35,7 +35,7 @@ class ItemsController extends Controller
         //$items = Item::where('price',"2000")->get()->first();
 
         //SEARCH WITH LIKE
-        //$items = Item::where('title','LIKE','test%')->get();
+        $items = Item::where('title','LIKE','test%')->get();
 
 
 
