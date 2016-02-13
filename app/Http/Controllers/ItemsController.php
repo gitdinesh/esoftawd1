@@ -35,8 +35,20 @@ class ItemsController extends Controller
         //$items = Item::where('price',"2000")->get()->first();
 
         //SEARCH WITH LIKE
-        $items = Item::where('title','LIKE','test%')->get();
+        //$items = Item::where('title','LIKE','test%')->get();
 
+
+        //SEARCH WITH AND 
+        //$items = Item::where('title','LIKE','test%')
+        //               ->where('price','2000')
+        //                ->get();
+
+        //SEARCH WITH IN 
+        //$items = Item::whereIn('id',[1,2,3])->get();
+
+        //Create query parameter with whereRaw
+        $items = Item::whereRaw("id in (1,2)")
+                        ->get();
 
 
         echo "<pre>";
