@@ -1,31 +1,28 @@
-## Laravel PHP Framework - Working With Ajax Request
+## Laravel PHP Framework - Retrieving Data from the Database 
 
-#Install NPM
+#Retrieving Data with  Model functions
 
-	sudo curl -sL https://deb.nodesource.com/setup | sudo bash -
-	sudo apt-get install -y nodejs
-	sudo npm -g install npm@latest
+#Get All records form table
+The Eloquent all method will return all of the results in the model's table.
 
-#Install Bower
+	$items = Item::all();
 
-	sudo npm -g install bower
+#Get Data with where
 
+Define Column that you want to query and call Eloquent get method
+	
+	Item::where('id',1)->get();
+    $items = Item::where('title','test')->get();
 
-#Locate bower instalation directory
-create .bowerrc file
-Add following line
-Change directory key 
+GET ONE RECODE FROM THE DATABASE BASED ON PRIMARY KEY
 
-	{
-  		"directory" : "public/lib"
-	}
+	$items = Item::find(1);
 
+GET FIRST RECODE FROM THE TABLE
 
-#Install Bower Components
+	$items = Item::where('price',"2000")->get()->first();
 
-	bower init 
+SEARCH WITH LIKE 
 
-or create bower.json file 
-
-	sudo bower install --allow-root
+	$items = Item::where('title','LIKE','test%')->get();
 

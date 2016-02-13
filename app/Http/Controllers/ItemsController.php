@@ -21,31 +21,31 @@ class ItemsController extends Controller
     public function index()
     {
 
-        //Define Array after view
+        //Retreving entire items table 
+        //$items = Item::all();
+        
+        //GET DATA WITH WHERE 
+        //$items = Item::where('id',1)->get();
+        //$items = Item::where('title','test')->get();
 
-        $items = [
-            [
-                "image"=>"images/product-img1.jpg",
-                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
-                "price"=>"$839.93"
-            ],
-            [
-                "image"=>"images/product-img2.jpg",
-                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
-                "price"=>"$800.93"
-            ],
-            [
-                "image"=>"images/product-img3.jpg",
-                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
-                "price"=>"$900.93"
-            ],
-            [
-                "image"=>"images/product-img4.jpg",
-                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
-                "price"=>"$1000.93"
-            ],
-        ];
-    
+        //GET ONE RECODE FROM THE DATABASE BASED ON PRIMARY KEY
+        //$items = Item::find(1);
+
+        //GET FIRST RECODE FROM THE TABLE
+        //$items = Item::where('price',"2000")->get()->first();
+
+        //SEARCH WITH LIKE
+        //$items = Item::where('title','LIKE','test%')->get();
+
+
+
+        echo "<pre>";
+        print_r($items);
+        //print_r($items->title);
+       /*foreach($items as $item){
+           echo  $item->title."<br/>";
+       }*/
+       die;
         return view('items.index')->with("items",$items);
     }
 

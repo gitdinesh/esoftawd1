@@ -83,7 +83,7 @@
 			
 	          		
 				  <div class="grid_1_of_4 images_1_of_4">
-					 <h4><a href="preview.html">{{$item['name']}}</a></h4>
+					 <h4><a href="preview.html">{{$item['title']}}</a></h4>
 					  <a href="{{ URL::to('/item/show/'.$item['name']) }}"><img src="{{$item['image']}}" alt="" /></a>
 					  <div class="price-details">
 				       <div class="price-number">
