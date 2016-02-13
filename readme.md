@@ -1,4 +1,4 @@
-# Laravel PHP Framework - Retrieving Data from the Database  (Model Query)
+# Laravel PHP Framework - Retrieving Data from the Database  (Query Builder)
 
 ##Get All records form table
 The Eloquent all method will return all of the results in the model's table.
@@ -7,35 +7,21 @@ The Eloquent all method will return all of the results in the model's table.
 
 ##Get Data with where
 
-Define Column that you want to query and call Eloquent get method
-	
-	Item::where('id',1)->get();
-    $items = Item::where('title','test')->get();
+Show specific data columns with where 
 
-GET ONE RECODE FROM THE DATABASE BASED ON PRIMARY KEY
+$item = DB::table($this->table)
+			->where ('id','=',$id)
+			->select($this->table.'.title')
+			->get();
 
-	$items = Item::find(1);
 
-GET FIRST RECODE FROM THE TABLE
+Simple Join query with two tables
 
-	$items = Item::where('price',"2000")->get()->first();
+	$item = DB::table($this->table)
+			->where ($this->table.'.id','=',$id)
+			->join('categories',$this->table.'.category_id','=','categories.id')
+			->select('categories.title AS category_title',$this->table.'.title')
+			->get(); 
 
-SEARCH WITH LIKE 
 
-	$items = Item::where('title','LIKE','test%')->get();
 
-SEARCH WITH AND 
-
-	$items = Item::where('title','LIKE','test%')
-					->where('price','2000')
-					->get();
-
-SEARCH WITH IN 
-
-    $items = Item::whereIn('id',[1,2,3])
-    				->get();
-
-Create query parameter with whereRaw
-
-	$items = Item::whereRaw("id in (1,2)")
-					->get();

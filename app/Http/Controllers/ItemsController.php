@@ -21,44 +21,31 @@ class ItemsController extends Controller
     public function index()
     {
 
-        //Retreving entire items table 
-        //$items = Item::all();
         
-        //GET DATA WITH WHERE 
-        //$items = Item::where('id',1)->get();
-        //$items = Item::where('title','test')->get();
+        return view('items.index');
+    }
 
-        //GET ONE RECODE FROM THE DATABASE BASED ON PRIMARY KEY
-        //$items = Item::find(1);
+    public function getItems(){
+        $item = new Item();
+        $items = $item->getAll();
+        
+        $output =[];
+        if(count($items) <= 0){
+            $output =[
+                'status'=>400,
+                'message'=>'List Empty'
+            ];
+            return json_encode($output);
+        }
 
-        //GET FIRST RECODE FROM THE TABLE
-        //$items = Item::where('price',"2000")->get()->first();
+        $output =[
+            'status'=>200,
+            'message'=>'Items found',
+            'items'=>$items
+        ];
+        return json_encode($output);
 
-        //SEARCH WITH LIKE
-        //$items = Item::where('title','LIKE','test%')->get();
-
-
-        //SEARCH WITH AND 
-        //$items = Item::where('title','LIKE','test%')
-        //               ->where('price','2000')
-        //                ->get();
-
-        //SEARCH WITH IN 
-        //$items = Item::whereIn('id',[1,2,3])->get();
-
-        //Create query parameter with whereRaw
-        $items = Item::whereRaw("id in (1,2)")
-                        ->get();
-
-
-        echo "<pre>";
-        print_r($items);
-        //print_r($items->title);
-       /*foreach($items as $item){
-           echo  $item->title."<br/>";
-       }*/
        die;
-        return view('items.index')->with("items",$items);
     }
 
     /**
@@ -113,7 +100,11 @@ class ItemsController extends Controller
     public function show($id)
     {
 
-
+        $item = new Item();
+        $items = $item->getItemById($id);
+        echo "<pre>";
+        print_r($items);
+        die;
          return view('items.showitems')->with("items",$id);
     }
 

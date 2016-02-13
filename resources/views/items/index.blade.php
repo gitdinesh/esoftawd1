@@ -77,25 +77,8 @@
     	    	
     	    	<div class="content-bottom-right">
     	    	<h3>Browse All Categories</h3>
-	            <div class="section group">
-					@foreach($items as $item)
+	            <div class="section group" id="items_list">
 					
-			
-	          		
-				  <div class="grid_1_of_4 images_1_of_4">
-					 <h4><a href="preview.html">{{$item['title']}}</a></h4>
-					  <a href="{{ URL::to('/item/show/'.$item['name']) }}"><img src="{{$item['image']}}" alt="" /></a>
-					  <div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">{{$item['price']}}</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">More Info</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>					 
-				</div>
-				@endforeach
 					
 			   </div>
 			   <div class="section group">
