@@ -1,16 +1,3 @@
-/**
- * Test Template
- *
- * This is test Template
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage test
- * @since test
- **/
-
-
 <?php get_header(); ?>
 <div class="content">
 <?php if ( have_posts() ) : ?>
